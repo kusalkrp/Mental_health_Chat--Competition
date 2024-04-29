@@ -5,9 +5,9 @@ import json
 
 # Connect to Redis
 r = redis.Redis(
-    host='redis-19735.c276.us-east-1-2.ec2.redns.redis-cloud.com',
-    port=19735,
-    password='*******'
+    host='redis-d3a34988-bf91-42db-a5dc-056dd611b04f-chatdat2762273445-ch.j.aivencloud.com',
+    port=12524,
+    password='cGiur9g39ZgyanCHfWKUNsDaKDLKZZBP'
 )
 
 # Define the function to delete old documents
