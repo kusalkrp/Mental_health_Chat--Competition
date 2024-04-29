@@ -50,35 +50,6 @@ collection = db["chat_history"]
 # Array to store chat history
 chat_history = []
 
-# Define the delete_old_documents function
-
-
-# Define the function to delete old documents
-def delete_old_documents():
-    while True:
-        # Calculate the timestamp 24 hours ago
-        twenty_four_hours_ago = datetime.now() - timedelta(hours=24)
-        
-        # Delete documents older than 24 hours
-        collection.delete_many({"timestamp": {"$lt": twenty_four_hours_ago}})
-        
-        # Sleep for 1 hour before checking again
-        time.sleep(3600)  # Sleep for 1 hour (3600 seconds)
-
-
-# Start the deletion process in a separate thread
-delete_thread = Thread(target=delete_old_documents)
-delete_thread.daemon = True  # Daemonize the thread to stop it when the main thread stops
-delete_thread.start()
-
-#API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
-#headers = {"Authorization": "Bearer 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"}
-
-#llm = CTransformers(
-   # model="model\llama-2-7b-chat.ggmlv3.q4_0.bin",
-    ###)
-
-
 
 #def query(payload):
     ##return response.json()
