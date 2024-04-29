@@ -1,3 +1,4 @@
+import json
 import requests
 from flask import Flask, render_template, jsonify, request
 from pinecone import Pinecone
@@ -42,10 +43,12 @@ PROMPT = PromptTemplate(template=prompt_template, input_variables=["context", "q
 chain_type_kwargs = {"prompt": PROMPT}
 
 
-# Initialize MongoDB connection
-client = MongoClient("mongodb+srv://kusalcoc1212:Kusal01@chat-history.bjnpiqq.mongodb.net/")
-db = client["M-chatbot"]
-collection = db["chat_history"]
+import redis
+
+r = redis.Redis(
+  host='redis-d3a34988-bf91-42db-a5dc-056dd611b04f-chatdat2762273445-ch.j.aivencloud.com',
+  port=12524,
+  password='cGiur9g39ZgyanCHfWKUNsDaKDLKZZBP')
 
 # Array to store chat history
 chat_history = []
@@ -76,17 +79,18 @@ def chat():
         # Print the input message forwarded by Ballerina
         print("Received message from Ballerina:", input_text)
 
-        # Check if user wants to end the conversation
+      # Check if user wants to end the conversation
         if input_text.lower() == "end":
-            # Save chat history to MongoDB
+            # Save chat history to Redis
             if chat_history:
-                chat_data = {
-                    "conversation": chat_history,
-                    "timestamp": datetime.now()
-                }
-                collection.insert_one(chat_data)
-                chat_history = []  # Clear chat history after saving to MongoDB
+                # Push each chat entry individually to Redis list
+                for entry in chat_history:
+                    chat_json = json.dumps(entry)  # Convert dictionary to JSON string
+                    r.rpush("chat_history", chat_json)
+                chat_history = []  # Clear chat history after saving to Redis
             return jsonify({"response": "Thank you for chatting with us."})
+
+
         
         # Handle greetings
         if input_text.lower() in ["hello", "hi", "hey"]:
