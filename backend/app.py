@@ -1,5 +1,4 @@
 import json
-import requests
 from flask import Flask, render_template, jsonify, request
 from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
@@ -15,7 +14,7 @@ import time
 from src.prompt import *
 from langchain_openai import OpenAI
 from langchain_openai import OpenAIEmbeddings
-
+import redis
 
 
 app = Flask(__name__)
@@ -43,7 +42,7 @@ PROMPT = PromptTemplate(template=prompt_template, input_variables=["context", "q
 chain_type_kwargs = {"prompt": PROMPT}
 
 
-import redis
+
 
 r = redis.Redis(
   host='redis-d3a34988-bf91-42db-a5dc-056dd611b04f-chatdat2762273445-ch.j.aivencloud.com',
