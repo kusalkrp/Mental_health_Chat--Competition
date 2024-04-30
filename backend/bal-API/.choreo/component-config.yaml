@@ -7,7 +7,7 @@ spec:
       - name: Bal-API
         port: 9090
         type: REST
-        visibility: Public
+        networkVisibility: Public
         context: /api
 
   # +optional Outgoing connection details for the component.
