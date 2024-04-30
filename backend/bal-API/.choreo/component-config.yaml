@@ -1,4 +1,8 @@
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+
 spec: 
+
   # +optional Outgoing connection details for the component.
      outbound:
     # +optional Defines the service references from the Internal Marketplace.
