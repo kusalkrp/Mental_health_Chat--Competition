@@ -27,7 +27,7 @@ service /api on new http:Listener(9090) {
         // Forward input message to Flask API
         http:Request flaskRequest = new;
         flaskRequest.setJsonPayload({"msg": inputMessage});
-        http:Response|http:ClientError flaskResponse = flaskClient->post("/", flaskRequest);
+        http:Response|http:ClientError flaskResponse = flaskClient->post("/get", flaskRequest);
 
         if (flaskResponse is http:Response) {
             // Extract response message from Flask API response
