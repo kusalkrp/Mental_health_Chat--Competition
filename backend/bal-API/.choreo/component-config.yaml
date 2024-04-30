@@ -1,7 +1,7 @@
 apiVersion: core.choreo.dev/v1beta1
 kind: ComponentConfig
 
-  inbound:
+  endpoints:
     # +required Unique name for the endpoint. (This name will be used when generating the managed API)
     - name: Bal-API
       # +required Numeric port value that gets exposed via the endpoint
