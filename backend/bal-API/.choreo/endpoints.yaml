@@ -4,5 +4,5 @@ endpoints:
   - name: Bal-API
     port: 9090
     type: REST
-    visibility: public
+    visibility: Public
     context: /api"

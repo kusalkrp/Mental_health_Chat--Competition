@@ -1,8 +1,8 @@
 version: 0.1
 
 endpoints:
-  - name: "Chat-API"
+  - name: Chat API
     port: 8080
-    type: "http"
-    visibility: "public"
-    context: "/get"
+    type: REST
+    visibility: Public
+    context: /get
