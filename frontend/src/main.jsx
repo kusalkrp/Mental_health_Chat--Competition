@@ -8,10 +8,10 @@ import { AuthProvider } from '@asgardeo/auth-react';
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<AuthProvider
     config={{
-		signInRedirectURL: "http://localhost:5173",
-		signOutRedirectURL: "http://localhost:5173",
-		clientID: "M4qEzHtcHPrd8fr8qvgP4tuYKR0a",
-		baseUrl: "https://api.asgardeo.io/t/diyasen",
+		signInRedirectURL: window.configs.auth.signInRedirectURL,
+		signOutRedirectURL: window.configs.auth.signOutRedirectURL,
+		clientID: window.configs.auth.clientID,
+		baseUrl:  window.configs.auth.baseUrl,
 		scope: [ "openid","profile" ]
     }}
   >
