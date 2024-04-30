@@ -1,0 +1,19 @@
+spec: 
+  # +optional Outgoing connection details for the component.
+     outbound:
+    # +optional Defines the service references from the Internal Marketplace.
+        serviceReferences:
+            # +required Name of the service reference.
+          - name: choreo:///diyasen/sycodoca/acrhvt/9bce3/v1/PUBLIC
+            # +required Name of the connection instance.
+             connectionConfig: 01ef0703-55f2-1176-8f5a-d5d715aafc3c
+            # +optional Environment variables injected to the component for connection configuration.
+         env:
+          - from: ServiceURL
+            to: https://d3a34988-bf91-42db-a5dc-056dd611b04f-dev.e1-us-cdp-2.choreoapis.dev/sycodoca/chatapi/chat-api-9bc/v1
+          - from: ConsumerKey
+            to: ejkE43QRioSyncIl7zhr46E66tQa
+          - from: ConsumerSecret
+            to: *****************
+          - from: TokenURL
+            to: https://sts.choreo.dev/oauth2/token
