@@ -3,6 +3,6 @@ version: 0.1
 endpoints:
   - name: "Bal-API"
     port: 9090
-    type: "http"
+    type: "REST"
     visibility: "public"
     context: "/api"
