@@ -1,9 +1,6 @@
-
-
 apiVersion: core.choreo.dev/v1beta1
 kind: ComponentConfig
-spec:
-  # +optional Incoming connection details for the component (AKA endpoints).
+
   inbound:
     # +required Unique name for the endpoint. (This name will be used when generating the managed API)
     - name: Bal-API
