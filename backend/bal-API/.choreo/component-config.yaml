@@ -24,9 +24,9 @@ spec:
     # +optional Defines the service references from the Internal Marketplace.
     serviceReferences:
       # +required Name of the service reference.
-      - name: choreo:///apifirst/mttm/mmvhxd/ad088/v1.0/PUBLIC
+      - name: choreo:///diyasen/sycodoca/acrhvt/9bce3/v1/PUBLIC
         # +required Name of the connection instance.
-        connectionConfig: 19d2648b-d29c-4452-afdd-1b9311e81412
+        connectionConfig: 01ef0703-55f2-1176-8f5a-d5d715aafc3c
         # +optional Environment variables injected to the component for connection configuration.
         env:
           - from: ServiceURL
