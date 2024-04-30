@@ -1,3 +1,13 @@
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+
+inbound:
+  - name: Bal-API
+    port: 9090
+    type: REST
+    visibility: Public
+    context: /api
+
 outbound:
     serviceReferences:
     - name: choreo:///diyasen/sycodoca/acrhvt/9bce3/v1/PUBLIC
