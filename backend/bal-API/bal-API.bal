@@ -1,7 +1,7 @@
 import ballerina/http;
 import ballerina/io;
 
-configurable string FLASK_API_URL = "http://localhost:8080/";
+configurable string FLASK_API_URL = "https://d3a34988-bf91-42db-a5dc-056dd611b04f-dev.e1-us-cdp-2.choreoapis.dev/sycodoca/chatapi/chat-api-9bc/v1.0";
 
 type InputRecord record {
     string prompt;
