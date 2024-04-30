@@ -14,7 +14,7 @@
 
 async function runChat(prompt) {
   try {
-    const response = await fetch('http://localhost:9090/api/chat', {
+    const response = await fetch('https://d3a34988-bf91-42db-a5dc-056dd611b04f-dev.e1-us-cdp-2.choreoapis.dev/sycodoca/balapi/bal-api-d0e/v1', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
