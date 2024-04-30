@@ -33,7 +33,7 @@ const Main = (props) => {
   return (
     <div className="main">
       <div className="nav">
-        <p>SyCoDoca</p>
+        <p>AiPsychiatric</p>
         <div className="nav">
           {username ? (
             <span>Hi, {username}</span>
@@ -137,7 +137,7 @@ const Main = (props) => {
           </div>
           <div className="bottom-info">
             <p>
-            SyCoDoca may display inaccurate info, including about people,
+            AiPsychiatric may display inaccurate info, including about people,
               so double-check its responses.
             </p>
           </div>
